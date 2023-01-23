@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intern_login_page/views/widgets/disountcontainer.dart';
 import 'package:intern_login_page/views/widgets/gridview.dart';
 
 class HomePage extends StatefulWidget {
@@ -9,6 +10,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  bool isSeleted = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -97,16 +99,26 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      height: 30,
-                      width: 120,
-                      decoration: BoxDecoration(
-                        border: Border.all(width: 1, color: Colors.black),
-                        borderRadius: BorderRadius.all(Radius.circular(20)),
-                      ),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text('Watches'),
+                    child: InkWell(
+                      onTap: () {
+                        isSeleted = true;
+                      },
+                      child: Container(
+                        height: 30,
+                        width: 120,
+                        decoration: BoxDecoration(
+                          color: isSeleted ? Colors.white : Colors.orange,
+                          border: Border.all(width: 1, color: Colors.black),
+                          borderRadius: BorderRadius.all(Radius.circular(20)),
+                        ),
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Text(
+                            'Watches',
+                            style: TextStyle(
+                                color: isSeleted ? Colors.black : Colors.white),
+                          ),
+                        ),
                       ),
                     ),
                   ),
@@ -173,7 +185,12 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            Gridview(),
+            SizedBox(
+              height: 10,
+            ),
+            Container(
+                height: MediaQuery.of(context).size.width * 0.384,
+                child: DiscountWidget()),
             Padding(
               padding: const EdgeInsets.only(left: 10, right: 10, bottom: 10),
               child: Container(

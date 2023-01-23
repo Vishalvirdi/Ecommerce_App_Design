@@ -100,10 +100,10 @@ class _DiscountWidgetState extends State<DiscountWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(6.0),
                 child: Text(
                   imageList[index]["price"],
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 11.5),
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 11),
                 ),
               ),
             ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intern_login_page/views/screens/home.dart';
+import 'package:intern_login_page/views/screens/login3.dart';
 
 import '../widgets/bottomnavigationbar.dart';
 
@@ -118,15 +119,13 @@ class _LoginPage4State extends State<LoginPage4> {
                                     isSelected: isSelected,
                                     onPressed: (index) {
                                       setState(() {
-                                        // isSelected[index] = !isSelected[index];
-                                        for (int i = 0;
-                                            i < isSelected.length;
-                                            i++) {
-                                          if (i == index) {
-                                            isSelected[i] = true;
-                                          } else {
-                                            isSelected[i] = false;
-                                          }
+                                        isSelected[index] = !isSelected[index];
+                                        if (index == 0 && isSelected[index]) {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      LoginPage3()));
                                         }
                                       });
                                     },

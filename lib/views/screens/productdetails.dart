@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:intern_login_page/views/widgets/disountcontainer.dart';
 import 'package:intern_login_page/views/widgets/slider.dart';
@@ -10,6 +12,7 @@ class ProductDetails extends StatefulWidget {
 }
 
 class _ProductDetailsState extends State<ProductDetails> {
+  int count = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -152,37 +155,53 @@ class _ProductDetailsState extends State<ProductDetails> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
-                            Container(
-                              color: Colors.orange,
-                              child: Center(
-                                  child: Padding(
-                                padding: const EdgeInsets.all(1.0),
-                                child: Icon(
-                                  Icons.remove,
-                                  color: Colors.white,
-                                ),
-                              )),
+                            InkWell(
+                              onTap: () {
+                                setState(() {
+                                  if (count > 0) {
+                                    count--;
+                                  }
+                                });
+                              },
+                              child: Container(
+                                color: Colors.orange,
+                                child: Center(
+                                    child: Padding(
+                                  padding: const EdgeInsets.all(1.0),
+                                  child: Icon(
+                                    Icons.remove,
+                                    color: Colors.white,
+                                  ),
+                                )),
+                              ),
                             ),
                             Expanded(
                               child: Container(
                                   color: Colors.white,
                                   child: Center(
                                       child: Text(
-                                    '01',
+                                    '$count',
                                     style:
                                         TextStyle(fontWeight: FontWeight.bold),
                                   ))),
                             ),
-                            Container(
-                              color: Colors.orange,
-                              child: Center(
-                                  child: Padding(
-                                padding: const EdgeInsets.all(1.0),
-                                child: Icon(
-                                  Icons.add,
-                                  color: Colors.white,
-                                ),
-                              )),
+                            InkWell(
+                              onTap: (() {
+                                setState(() {
+                                  count++;
+                                });
+                              }),
+                              child: Container(
+                                color: Colors.orange,
+                                child: Center(
+                                    child: Padding(
+                                  padding: const EdgeInsets.all(1.0),
+                                  child: Icon(
+                                    Icons.add,
+                                    color: Colors.white,
+                                  ),
+                                )),
+                              ),
                             ),
                           ],
                         )),
@@ -201,7 +220,7 @@ class _ProductDetailsState extends State<ProductDetails> {
               ),
             ),
             Container(
-                height: MediaQuery.of(context).size.width * 0.355,
+                height: MediaQuery.of(context).size.width * 0.383,
                 child: DiscountWidget()),
             Padding(
               padding: const EdgeInsets.only(left: 15, right: 15),

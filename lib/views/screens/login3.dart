@@ -113,7 +113,16 @@ class _LoginPage3State extends State<LoginPage3> {
                                       )
                                     ],
                                     isSelected: isSelected,
-                                    onPressed: (index) {},
+                                    onPressed: (index) {
+                                      isSelected[index] = !isSelected[index];
+                                      if (index == 1 && isSelected[index]) {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    LoginPage4()));
+                                      }
+                                    },
                                   ),
                                 ),
                               ),
