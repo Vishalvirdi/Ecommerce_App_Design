@@ -25,13 +25,14 @@ class _GridviewState extends State<Gridview> {
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  childAspectRatio:
-                      MediaQuery.of(context).size.width * .44 / 246,
+                  childAspectRatio: MediaQuery.of(context).size.width *
+                      .35 /
+                      (MediaQuery.of(context).size.width * 0.35 + 60),
                   mainAxisSpacing: 10,
                   crossAxisSpacing: 10,
                   crossAxisCount: 3),
               itemBuilder: (context, index) => Container(
-                height: 200,
+                // height: 200,
                 width: double.infinity,
                 decoration: BoxDecoration(
                     color: Colors.white,
@@ -49,7 +50,7 @@ class _GridviewState extends State<Gridview> {
                             ),
                             borderRadius: BorderRadius.circular(4.0),
                           ),
-                          height: 110,
+                          height: MediaQuery.of(context).size.width * 0.26,
                           width: double.infinity,
                           child: Image.asset(
                             imageList[index]['image'],
@@ -63,7 +64,10 @@ class _GridviewState extends State<Gridview> {
                     ),
                     Container(
                       height: 35,
-                      child: Text(imageList[index]['name']),
+                      child: Text(
+                        imageList[index]['name'],
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
                     )
                   ],
                 ),

@@ -235,9 +235,9 @@ class _ProductDetailsState extends State<ProductDetails> {
                   child: Text(
                     'Add To Cart',
                     style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                        // fontWeight: FontWeight.bold,
                         color: Colors.white,
-                        fontSize: 20),
+                        fontSize: 18),
                   )),
             ),
           ],

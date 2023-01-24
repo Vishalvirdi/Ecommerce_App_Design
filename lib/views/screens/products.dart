@@ -17,23 +17,33 @@ class _ProductPageState extends State<ProductPage> {
           child: Column(
         children: [
           Container(
-            margin: EdgeInsets.symmetric(horizontal: 5),
             height: 50,
-            // width: 300,
-            color: Color.fromARGB(255, 234, 181, 23),
+            color: Colors.orange,
             child: ListTile(
-              leading: Icon(
-                Icons.arrow_back_outlined,
-                color: Colors.white,
+              leading: Container(
+                height: 25,
+                width: 25,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(color: Colors.white),
+                ),
+                child: Center(
+                    child: Icon(
+                  size: 15,
+                  Icons.arrow_back_ios_new_outlined,
+                  color: Colors.white,
+                )),
               ),
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    'Mobile & Computer Accessories',
-                    // overflow: TextOverflow.clip,
-                    textScaleFactor: 1,
-                    style: TextStyle(color: Colors.white),
+                  Flexible(
+                    child: Text(
+                      'Mobile & Computer Accessories',
+                      textScaleFactor: 1,
+                      style: TextStyle(color: Colors.white),
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ),
                 ],
               ),

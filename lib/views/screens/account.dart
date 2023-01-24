@@ -21,58 +21,55 @@ class _AccountPageState extends State<AccountPage> {
                   height: MediaQuery.of(context).size.height * 0.42,
                   width: double.infinity,
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 8, right: 8),
-                  child: Container(
-                      alignment: Alignment.topCenter,
-                      height: MediaQuery.of(context).size.height * 0.28,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.vertical(
-                              bottom: Radius.circular(20)),
-                          color: Colors.orange),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(15.0),
-                            child: Container(
-                              height: 25,
-                              width: 25,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                // borderRadius: BorderRadius.circular(150.0),
-                                border: Border.all(color: Colors.white),
-                              ),
-                              child: Center(
-                                  child: Icon(
-                                size: 15,
-                                Icons.arrow_back_ios_new_outlined,
-                                color: Colors.white,
-                              )),
+                Container(
+                    alignment: Alignment.topCenter,
+                    height: MediaQuery.of(context).size.height * 0.28,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                        borderRadius:
+                            BorderRadius.vertical(bottom: Radius.circular(20)),
+                        color: Colors.orange),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(15.0),
+                          child: Container(
+                            height: 25,
+                            width: 25,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              // borderRadius: BorderRadius.circular(150.0),
+                              border: Border.all(color: Colors.white),
                             ),
+                            child: Center(
+                                child: Icon(
+                              size: 15,
+                              Icons.arrow_back_ios_new_outlined,
+                              color: Colors.white,
+                            )),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Container(
-                              height: 25,
-                              width: 25,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                // borderRadius: BorderRadius.circular(150.0),
-                                border: Border.all(color: Colors.white),
-                              ),
-                              child: Center(
-                                  child: Icon(
-                                size: 15,
-                                Icons.question_mark,
-                                color: Colors.white,
-                              )),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Container(
+                            height: 25,
+                            width: 25,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              // borderRadius: BorderRadius.circular(150.0),
+                              border: Border.all(color: Colors.white),
                             ),
-                          )
-                        ],
-                      )),
-                ),
+                            child: Center(
+                                child: Icon(
+                              size: 15,
+                              Icons.question_mark,
+                              color: Colors.white,
+                            )),
+                          ),
+                        )
+                      ],
+                    )),
                 Align(
                   alignment: Alignment.bottomCenter,
                   child: Column(

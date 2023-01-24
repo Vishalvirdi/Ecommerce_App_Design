@@ -22,16 +22,19 @@ class _HomePageState extends State<HomePage> {
               height: 25,
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.only(left: 10, right: 10),
               child: Container(
                 // height: 100,
                 // width: 500,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    CircleAvatar(
-                      backgroundImage: AssetImage('assets/Register.jpg'),
-                      radius: 20,
+                    Padding(
+                      padding: const EdgeInsets.only(right: 5),
+                      child: CircleAvatar(
+                        backgroundImage: AssetImage('assets/Register.jpg'),
+                        radius: 20,
+                      ),
                     ),
                     Container(
                       decoration: BoxDecoration(
@@ -41,14 +44,14 @@ class _HomePageState extends State<HomePage> {
                         ),
                       )),
                       height: 45,
-                      width: MediaQuery.of(context).size.width * 0.5,
+                      width: MediaQuery.of(context).size.width * 0.6,
                       child: TextField(
                         decoration: InputDecoration(
                             filled: true,
                             fillColor: Color.fromARGB(31, 239, 201, 201),
                             contentPadding: const EdgeInsets.symmetric(
                                 vertical: 10.0, horizontal: 15),
-                            hintText: "Search",
+                            hintText: "Search Your Keyword",
                             suffixIcon: Container(
                               height: 25,
                               width: 25,
@@ -61,7 +64,7 @@ class _HomePageState extends State<HomePage> {
                               child: Icon(
                                 Icons.search,
                                 color: Colors.white,
-                                size: 22.0,
+                                size: 21.0,
                               ),
                             ),
                             enabledBorder: OutlineInputBorder(
@@ -71,19 +74,22 @@ class _HomePageState extends State<HomePage> {
                                     BorderRadius.all(Radius.circular(30)))),
                       ),
                     ),
-                    Container(
-                      height: 43,
-                      width: 43,
-                      decoration: BoxDecoration(
-                        color: Colors.orange,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(100),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 5),
+                      child: Container(
+                        height: 42,
+                        width: 42,
+                        decoration: BoxDecoration(
+                          color: Colors.orange,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(100),
+                          ),
                         ),
-                      ),
-                      child: Icon(
-                        Icons.shopping_bag,
-                        color: Colors.white,
-                        size: 22.0,
+                        child: Icon(
+                          Icons.shopping_bag,
+                          color: Colors.white,
+                          size: 22.0,
+                        ),
                       ),
                     ),
                   ],
@@ -108,7 +114,9 @@ class _HomePageState extends State<HomePage> {
                         width: 120,
                         decoration: BoxDecoration(
                           color: isSeleted ? Colors.white : Colors.orange,
-                          border: Border.all(width: 1, color: Colors.black),
+                          border: Border.all(
+                              width: 1,
+                              color: isSeleted ? Colors.black : Colors.white),
                           borderRadius: BorderRadius.all(Radius.circular(20)),
                         ),
                         child: Align(
@@ -194,7 +202,7 @@ class _HomePageState extends State<HomePage> {
             Padding(
               padding: const EdgeInsets.only(left: 10, right: 10, bottom: 10),
               child: Container(
-                height: 90.0,
+                height: MediaQuery.of(context).size.height * 0.26,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),

@@ -13,6 +13,7 @@ class _DesignPageState extends State<DesignPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -23,23 +24,38 @@ class _DesignPageState extends State<DesignPage> {
                   children: [
                     Positioned(
                       child: Container(
-                        margin: EdgeInsets.symmetric(horizontal: 5),
+                        // margin: EdgeInsets.symmetric(horizontal: 5),
                         height: 85,
                         // width: 300,
-                        color: Color.fromARGB(255, 234, 181, 23),
+                        color: Colors.orange,
                         child: ListTile(
-                          leading: Icon(
-                            Icons.arrow_back_outlined,
-                            color: Colors.white,
+                          leading: Container(
+                            height: 25,
+                            width: 25,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              // borderRadius: BorderRadius.circular(150.0),
+                              border: Border.all(color: Colors.white),
+                            ),
+                            child: Center(
+                                child: Icon(
+                              size: 14.5,
+                              Icons.arrow_back_ios_new_outlined,
+                              color: Colors.white,
+                            )),
                           ),
                           title: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text(
-                                'Mobile & Computer Accessories',
-                                // overflow: TextOverflow.clip,
-                                textScaleFactor: 1,
-                                style: TextStyle(color: Colors.white),
+                              Flexible(
+                                child: Flexible(
+                                  child: Text(
+                                    'Mobile & Computer Accessories',
+                                    overflow: TextOverflow.ellipsis,
+                                    textScaleFactor: 1,
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                ),
                               ),
                             ],
                           ),
@@ -57,18 +73,25 @@ class _DesignPageState extends State<DesignPage> {
                       right: 10,
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: TextField(
-                          // onChanged: (value) => _runFilter(value),
-                          decoration: InputDecoration(
-                            filled: true,
-                            fillColor: Colors.white,
-                            contentPadding: const EdgeInsets.symmetric(
-                                vertical: 10.0, horizontal: 15),
-                            hintText: "Search",
-                            suffixIcon: const Icon(Icons.search),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(8.0),
-                              borderSide: const BorderSide(),
+                        child: Card(
+                          elevation: 5,
+                          child: Container(
+                            height: 40,
+                            decoration: BoxDecoration(
+                                border: Border.all(color: Colors.white),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10))),
+                            child: TextField(
+                              // onChanged: (value) => _runFilter(value),
+                              decoration: InputDecoration(
+                                border: InputBorder.none,
+                                filled: true,
+                                fillColor: Colors.white,
+                                contentPadding: const EdgeInsets.symmetric(
+                                    vertical: 15.0, horizontal: 15),
+                                hintText: "Search",
+                                suffixIcon: const Icon(Icons.search),
+                              ),
                             ),
                           ),
                         ),

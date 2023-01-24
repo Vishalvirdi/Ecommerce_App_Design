@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:intern_login_page/views/screens/cartpage.dart';
 
 import '../screens/account.dart';
-import '../screens/cart.dart';
+
 import '../screens/design.dart';
 import '../screens/home.dart';
 
