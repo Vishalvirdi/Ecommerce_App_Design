@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:intern_login_page/views/screens/cartpage.dart';
 import 'package:intern_login_page/views/widgets/disountcontainer.dart';
 import 'package:intern_login_page/views/widgets/slider.dart';
 
@@ -17,36 +18,47 @@ class _ProductDetailsState extends State<ProductDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.orange,
+        title: Text(
+          'Wireless Headphone',
+          style: TextStyle(color: Colors.white),
+        ),
+        centerTitle: true,
+        leading: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: Container(
+            height: 25,
+            width: 25,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              // borderRadius: BorderRadius.circular(150.0),
+              border: Border.all(color: Colors.white),
+            ),
+            child: Center(
+                child: Icon(
+              size: 13,
+              Icons.arrow_back_ios_new_outlined,
+              color: Colors.white,
+            )),
+          ),
+        ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Center(
+                child: Icon(
+              size: 24,
+              Icons.shopping_bag_outlined,
+              color: Colors.white,
+            )),
+          )
+        ],
+      ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 5),
-              height: 50,
-              // width: 300,
-              color: Color.fromARGB(255, 234, 181, 23),
-              child: ListTile(
-                leading: Icon(
-                  Icons.arrow_back_outlined,
-                  color: Colors.white,
-                ),
-                title: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Wireless Headphone',
-                      textScaleFactor: 1,
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ],
-                ),
-                trailing: Icon(
-                  Icons.shopping_bag,
-                  color: Colors.white,
-                ),
-              ),
-            ),
             MySlider(),
             SizedBox(
               height: 15,
@@ -231,7 +243,10 @@ class _ProductDetailsState extends State<ProductDetails> {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5),
                       )),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => CartPage()));
+                  },
                   child: Text(
                     'Add To Cart',
                     style: TextStyle(

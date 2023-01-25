@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intern_login_page/views/screens/cartpage.dart';
+import 'package:intern_login_page/views/screens/products.dart';
 
 import '../screens/account.dart';
 
@@ -14,7 +15,7 @@ class BottomNavigation extends StatefulWidget {
 }
 
 class _BottomNavigationState extends State<BottomNavigation> {
-  var _ourpages = [HomePage(), DesignPage(), CartPage(), AccountPage()];
+  var _ourpages = [HomePage(), DesignPage(), ProductPage(), AccountPage()];
   var myindex = 0;
   @override
   Widget build(BuildContext context) {

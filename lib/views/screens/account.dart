@@ -106,7 +106,7 @@ class _AccountPageState extends State<AccountPage> {
                       ),
                       Text(
                         'dennislewis12@gmail.com',
-                        style: TextStyle(fontSize: 11),
+                        style: TextStyle(fontSize: 14),
                       ),
                     ],
                   ),
