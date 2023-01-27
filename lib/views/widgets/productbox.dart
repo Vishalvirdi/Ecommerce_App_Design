@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../screens/productdetails.dart';
+
 class ProductBox extends StatefulWidget {
   const ProductBox({Key? key}) : super(key: key);
 
@@ -55,56 +57,60 @@ class _ProductBoxState extends State<ProductBox> {
       itemBuilder: (context, index) {
         return Padding(
           padding: const EdgeInsets.only(top: 13, left: 17, right: 17),
-          child: Container(
-            height: 140,
-            width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(
-                border: Border.all(width: 1, color: Colors.black),
-                borderRadius: BorderRadius.all(Radius.circular(10))),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Container(
-                    width: MediaQuery.of(context).size.width * 0.5,
-                    child: Column(
-                      // mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Flexible(
-                          child: Text(
-                            productList[index]['name'],
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 19),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 2.5,
-                        ),
-                        Flexible(
-                          child: Text(
-                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                            style: TextStyle(fontSize: 13.8),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 15,
-                        ),
-                        Row(
-                          children: [
-                            Text(
-                              productList[index]['price'],
+          child: InkWell(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ProductDetails()));
+            },
+            child: Container(
+              height: 140,
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                  border: Border.all(width: 1, color: Colors.black),
+                  borderRadius: BorderRadius.all(Radius.circular(10))),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.5,
+                      child: Column(
+                        // mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Flexible(
+                            child: Text(
+                              productList[index]['name'],
                               style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16,
-                                  color: Colors.orange),
+                                  fontWeight: FontWeight.bold, fontSize: 19),
                             ),
-                            SizedBox(
-                              width: 10,
+                          ),
+                          SizedBox(
+                            height: 2.5,
+                          ),
+                          Flexible(
+                            child: Text(
+                              "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                              style: TextStyle(fontSize: 13.8),
                             ),
-                            Flexible(
-                              child: Card(
+                          ),
+                          SizedBox(
+                            height: 30,
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                productList[index]['price'],
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16,
+                                    color: Colors.orange),
+                              ),
+                              SizedBox(
+                                width: 20,
+                              ),
+                              Card(
                                 elevation: 5,
                                 child: Container(
                                     decoration: BoxDecoration(
@@ -172,34 +178,34 @@ class _ProductBoxState extends State<ProductBox> {
                                         ),
                                       ],
                                     )),
-                              ),
-                            )
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 12),
-                  child: Container(
-                    height: MediaQuery.of(context).size.width * 0.255,
-                    width: MediaQuery.of(context).size.width * 0.255,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(
-                          productList[index]['image'],
-                        ),
-                        fit: BoxFit.fill,
-                      ),
-                      border: Border.all(width: 1, color: Colors.black),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(8),
+                              )
+                            ],
+                          ),
+                        ],
                       ),
                     ),
                   ),
-                ),
-              ],
+                  Padding(
+                    padding: const EdgeInsets.only(right: 12),
+                    child: Container(
+                      height: MediaQuery.of(context).size.width * 0.255,
+                      width: MediaQuery.of(context).size.width * 0.255,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(
+                            productList[index]['image'],
+                          ),
+                          fit: BoxFit.fill,
+                        ),
+                        border: Border.all(width: 1, color: Colors.black),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(8),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         );

@@ -202,7 +202,7 @@ class _HomePageState extends State<HomePage> {
             Padding(
               padding: const EdgeInsets.only(left: 10, right: 10, bottom: 10),
               child: Container(
-                height: MediaQuery.of(context).size.height * 0.26,
+                height: MediaQuery.of(context).size.height * 0.12,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
@@ -231,6 +231,7 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
+            Gridview(),
             Gridview(),
             Gridview(),
           ],

@@ -27,12 +27,11 @@ class _GridviewState extends State<Gridview> {
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   childAspectRatio: MediaQuery.of(context).size.width *
                       .35 /
-                      (MediaQuery.of(context).size.width * 0.35 + 60),
-                  mainAxisSpacing: 10,
+                      (MediaQuery.of(context).size.width * 0.35 + 35),
+                  // mainAxisSpacing: 10,
                   crossAxisSpacing: 10,
                   crossAxisCount: 3),
               itemBuilder: (context, index) => Container(
-                // height: 200,
                 width: double.infinity,
                 decoration: BoxDecoration(
                     color: Colors.white,
@@ -60,14 +59,11 @@ class _GridviewState extends State<Gridview> {
                       ),
                     ),
                     SizedBox(
-                      height: 5,
+                      height: 2,
                     ),
-                    Container(
-                      height: 35,
-                      child: Text(
-                        imageList[index]['name'],
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
+                    Text(
+                      imageList[index]['name'],
+                      style: TextStyle(fontWeight: FontWeight.bold),
                     )
                   ],
                 ),

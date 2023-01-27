@@ -28,7 +28,6 @@ class _ProductPageState extends State<ProductPage> {
             width: 25,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              // borderRadius: BorderRadius.circular(150.0),
               border: Border.all(color: Colors.white),
             ),
             child: Center(
@@ -54,12 +53,7 @@ class _ProductPageState extends State<ProductPage> {
       body: SingleChildScrollView(
           child: Column(
         children: [
-          InkWell(
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ProductDetails()));
-              },
-              child: ProductBox()),
+          ProductBox(),
         ],
       )),
     );
