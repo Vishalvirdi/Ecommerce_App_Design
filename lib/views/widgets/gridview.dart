@@ -45,6 +45,7 @@ class _GridviewState extends State<Gridview> {
                         child: Container(
                           decoration: BoxDecoration(
                             border: Border.all(
+                              width: 0.75,
                               color: Colors.black,
                             ),
                             borderRadius: BorderRadius.circular(4.0),
@@ -59,7 +60,7 @@ class _GridviewState extends State<Gridview> {
                       ),
                     ),
                     SizedBox(
-                      height: 2,
+                      height: 4,
                     ),
                     Text(
                       imageList[index]['name'],

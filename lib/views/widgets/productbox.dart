@@ -63,42 +63,48 @@ class _ProductBoxState extends State<ProductBox> {
                   MaterialPageRoute(builder: (context) => ProductDetails()));
             },
             child: Container(
-              height: 140,
+              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+              height: MediaQuery.of(context).size.height * .2,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
-                  border: Border.all(width: 1, color: Colors.black),
+                  border: Border.all(width: 0.7, color: Colors.black),
                   borderRadius: BorderRadius.all(Radius.circular(10))),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
+                  Expanded(
                     child: Container(
                       width: MediaQuery.of(context).size.width * 0.5,
                       child: Column(
-                        // mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Flexible(
-                            child: Text(
-                              productList[index]['name'],
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 19),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Flexible(
+                                  child: Text(
+                                    productList[index]['name'],
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 18),
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 2.5,
+                                ),
+                                Flexible(
+                                  child: Text(
+                                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                                    style: TextStyle(fontSize: 13),
+                                  ),
+                                ),
+                              ],
                             ),
-                          ),
-                          SizedBox(
-                            height: 2.5,
-                          ),
-                          Flexible(
-                            child: Text(
-                              "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                              style: TextStyle(fontSize: 13.8),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 30,
                           ),
                           Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
                                 productList[index]['price'],
@@ -106,9 +112,6 @@ class _ProductBoxState extends State<ProductBox> {
                                     fontWeight: FontWeight.bold,
                                     fontSize: 16,
                                     color: Colors.orange),
-                              ),
-                              SizedBox(
-                                width: 20,
                               ),
                               Card(
                                 elevation: 5,
@@ -186,10 +189,10 @@ class _ProductBoxState extends State<ProductBox> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(right: 12),
+                    padding: const EdgeInsets.only(left: 10),
                     child: Container(
-                      height: MediaQuery.of(context).size.width * 0.255,
-                      width: MediaQuery.of(context).size.width * 0.255,
+                      height: (MediaQuery.of(context).size.height * 0.2) - 25,
+                      width: (MediaQuery.of(context).size.height * 0.2) - 25,
                       decoration: BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage(
@@ -197,7 +200,7 @@ class _ProductBoxState extends State<ProductBox> {
                           ),
                           fit: BoxFit.fill,
                         ),
-                        border: Border.all(width: 1, color: Colors.black),
+                        border: Border.all(width: 0.7, color: Colors.black),
                         borderRadius: BorderRadius.all(
                           Radius.circular(8),
                         ),

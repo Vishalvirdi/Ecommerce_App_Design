@@ -48,13 +48,12 @@ class _DesignPageState extends State<DesignPage> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Flexible(
-                                child: Flexible(
-                                  child: Text(
-                                    'Mobile & Computer Accessories',
-                                    overflow: TextOverflow.ellipsis,
-                                    textScaleFactor: 1,
-                                    style: TextStyle(color: Colors.white),
-                                  ),
+                                child: Text(
+                                  'Mobile & Computer Accessories',
+                                  style: TextStyle(
+                                      // fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                      fontSize: 16.5),
                                 ),
                               ),
                             ],
@@ -74,7 +73,7 @@ class _DesignPageState extends State<DesignPage> {
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Card(
-                          elevation: 5,
+                          elevation: 8,
                           child: Container(
                             height: 40,
                             decoration: BoxDecoration(
@@ -88,8 +87,15 @@ class _DesignPageState extends State<DesignPage> {
                                 filled: true,
                                 fillColor: Colors.white,
                                 contentPadding: const EdgeInsets.symmetric(
-                                    vertical: 15.0, horizontal: 15),
+                                    vertical: 8.0, horizontal: 15),
                                 hintText: "Search",
+                                hintStyle: Theme.of(context)
+                                    .textTheme
+                                    .caption
+                                    ?.copyWith(
+                                      fontSize: 12,
+                                      color: Colors.black,
+                                    ),
                                 suffixIcon: const Icon(Icons.search),
                               ),
                             ),

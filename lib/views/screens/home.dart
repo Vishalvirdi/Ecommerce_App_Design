@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intern_login_page/views/widgets/containerwidget.dart';
 import 'package:intern_login_page/views/widgets/disountcontainer.dart';
 import 'package:intern_login_page/views/widgets/gridview.dart';
 
@@ -32,8 +33,9 @@ class _HomePageState extends State<HomePage> {
                     Padding(
                       padding: const EdgeInsets.only(right: 5),
                       child: CircleAvatar(
-                        backgroundImage: AssetImage('assets/Register.jpg'),
-                        radius: 20,
+                        backgroundImage: NetworkImage(
+                            'https://cdn.pixabay.com/photo/2021/07/20/14/59/iron-man-6480952_960_720.jpg'),
+                        radius: 18,
                       ),
                     ),
                     Container(
@@ -43,7 +45,7 @@ class _HomePageState extends State<HomePage> {
                           50,
                         ),
                       )),
-                      height: 45,
+                      height: 40,
                       width: MediaQuery.of(context).size.width * 0.6,
                       child: TextField(
                         decoration: InputDecoration(
@@ -52,9 +54,14 @@ class _HomePageState extends State<HomePage> {
                             contentPadding: const EdgeInsets.symmetric(
                                 vertical: 10.0, horizontal: 15),
                             hintText: "Search Your Keyword",
+                            hintStyle:
+                                Theme.of(context).textTheme.caption?.copyWith(
+                                      fontSize: 12,
+                                      color: Colors.black,
+                                    ),
                             suffixIcon: Container(
-                              height: 25,
-                              width: 25,
+                              height: 20,
+                              width: 20,
                               decoration: BoxDecoration(
                                 color: Colors.orange,
                                 borderRadius: BorderRadius.all(
@@ -64,12 +71,12 @@ class _HomePageState extends State<HomePage> {
                               child: Icon(
                                 Icons.search,
                                 color: Colors.white,
-                                size: 21.0,
+                                size: 20.0,
                               ),
                             ),
                             enabledBorder: OutlineInputBorder(
                                 borderSide:
-                                    BorderSide(width: 1, color: Colors.white),
+                                    BorderSide(width: 0.7, color: Colors.white),
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(30)))),
                       ),
@@ -77,8 +84,8 @@ class _HomePageState extends State<HomePage> {
                     Padding(
                       padding: const EdgeInsets.only(left: 5),
                       child: Container(
-                        height: 42,
-                        width: 42,
+                        height: 37,
+                        width: 37,
                         decoration: BoxDecoration(
                           color: Colors.orange,
                           borderRadius: BorderRadius.all(
@@ -88,7 +95,7 @@ class _HomePageState extends State<HomePage> {
                         child: Icon(
                           Icons.shopping_bag,
                           color: Colors.white,
-                          size: 22.0,
+                          size: 18.0,
                         ),
                       ),
                     ),
@@ -104,7 +111,7 @@ class _HomePageState extends State<HomePage> {
               child: Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(6.0),
                     child: InkWell(
                       onTap: () {
                         isSeleted = true;
@@ -115,7 +122,7 @@ class _HomePageState extends State<HomePage> {
                         decoration: BoxDecoration(
                           color: isSeleted ? Colors.white : Colors.orange,
                           border: Border.all(
-                              width: 1,
+                              width: 0.7,
                               color: isSeleted ? Colors.black : Colors.white),
                           borderRadius: BorderRadius.all(Radius.circular(20)),
                         ),
@@ -131,12 +138,12 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(6.0),
                     child: Container(
                       height: 30,
                       width: 120,
                       decoration: BoxDecoration(
-                        border: Border.all(width: 1, color: Colors.black),
+                        border: Border.all(width: 0.7, color: Colors.black),
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                       ),
                       child: Align(
@@ -146,12 +153,12 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(6.0),
                     child: Container(
                       height: 30,
                       width: 155,
                       decoration: BoxDecoration(
-                        border: Border.all(width: 1, color: Colors.black),
+                        border: Border.all(width: 0.7, color: Colors.black),
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                       ),
                       child: Align(
@@ -161,12 +168,12 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(6.0),
                     child: Container(
                       height: 30,
                       width: 120,
                       decoration: BoxDecoration(
-                        border: Border.all(width: 1, color: Colors.black),
+                        border: Border.all(width: 0.7, color: Colors.black),
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                       ),
                       child: Align(
@@ -187,7 +194,7 @@ class _HomePageState extends State<HomePage> {
                   Text(
                     "Flash Deals",
                     style: TextStyle(
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w900,
                     ),
                   ),
                 ],
@@ -225,15 +232,24 @@ class _HomePageState extends State<HomePage> {
                   Text(
                     "Categories",
                     style: TextStyle(
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w900,
                     ),
                   ),
                 ],
               ),
             ),
-            Gridview(),
-            Gridview(),
-            Gridview(),
+            SizedBox(
+              height: 10,
+            ),
+            Container(
+                height: MediaQuery.of(context).size.width * 0.384,
+                child: ContainerWidget()),
+            Container(
+                height: MediaQuery.of(context).size.width * 0.384,
+                child: ContainerWidget()),
+            Container(
+                height: MediaQuery.of(context).size.width * 0.384,
+                child: ContainerWidget()),
           ],
         ),
       ),

@@ -58,7 +58,7 @@ class _DiscountWidgetState extends State<DiscountWidget> {
                         ),
                         fit: BoxFit.fill,
                       ),
-                      border: Border.all(width: 1, color: Colors.black),
+                      border: Border.all(width: 0.7, color: Colors.black),
                       borderRadius: BorderRadius.all(
                         Radius.circular(8),
                       ),
@@ -105,7 +105,10 @@ class _DiscountWidgetState extends State<DiscountWidget> {
               padding: const EdgeInsets.all(6.0),
               child: Text(
                 imageList[index]["price"],
-                style: TextStyle(fontWeight: FontWeight.w900, fontSize: 11),
+                style: TextStyle(
+                    fontWeight: FontWeight.w900,
+                    fontSize: 12,
+                    color: Colors.black),
               ),
             ),
           ],

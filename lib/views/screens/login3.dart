@@ -85,6 +85,7 @@ class _LoginPage3State extends State<LoginPage3> {
                                     color: Colors.orange,
                                     selectedBorderColor: Colors.orange,
                                     borderColor: Colors.black,
+                                    borderWidth: 0.7,
                                     borderRadius: BorderRadius.circular(20),
                                     children: [
                                       Container(
@@ -135,9 +136,18 @@ class _LoginPage3State extends State<LoginPage3> {
                                   child: TextFormField(
                                     controller: _emailController,
                                     decoration: InputDecoration(
-                                      border: UnderlineInputBorder(),
-                                      hintStyle: TextStyle(fontSize: 14),
+                                      enabledBorder: UnderlineInputBorder(
+                                          borderSide:
+                                              BorderSide(color: Colors.black)),
                                       hintText: 'Username Or Email',
+                                      hintStyle: Theme.of(context)
+                                          .textTheme
+                                          .caption
+                                          ?.copyWith(
+                                            fontSize: 14,
+                                            // fontWeight: FontWeight.bold,
+                                            color: Colors.black,
+                                          ),
                                     ),
                                     validator: (val) {
                                       return RegExp(
@@ -160,12 +170,23 @@ class _LoginPage3State extends State<LoginPage3> {
                                   child: TextFormField(
                                     controller: _passwordController,
                                     decoration: InputDecoration(
+                                      enabledBorder: UnderlineInputBorder(
+                                          borderSide:
+                                              BorderSide(color: Colors.black)),
                                       // border: OutlineInputBorder(),
                                       suffixIcon: Icon(
                                         Icons.remove_red_eye,
+                                        color: Colors.black,
                                         size: 18,
                                       ),
-                                      hintStyle: TextStyle(fontSize: 14),
+                                      hintStyle: Theme.of(context)
+                                          .textTheme
+                                          .caption
+                                          ?.copyWith(
+                                            fontSize: 14,
+                                            // fontWeight: FontWeight.bold,
+                                            color: Colors.black,
+                                          ),
                                       hintText: 'Password',
                                     ),
                                     validator: (val) {
@@ -229,7 +250,7 @@ class _LoginPage3State extends State<LoginPage3> {
                               ),
                               Center(
                                   child: Text(
-                                "Or",
+                                "OR",
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               )),
                               SizedBox(

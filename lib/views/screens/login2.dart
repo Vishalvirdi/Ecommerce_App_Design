@@ -54,16 +54,16 @@ class _Login2PageState extends State<Login2Page> {
                   ),
                   Container(
                     decoration: BoxDecoration(
-                      border: Border.all(width: 1, color: Colors.black),
+                      border: Border.all(width: 0.7, color: Colors.black),
                       borderRadius: BorderRadius.all(Radius.circular(10)),
                     ),
-                    height: 160,
+                    height: 158,
                     width: MediaQuery.of(context).size.width,
                     child: Column(
                       children: [
                         Padding(
                           padding: const EdgeInsets.only(
-                              left: 15, top: 12, right: 15),
+                              left: 12, top: 12, right: 12),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -71,8 +71,8 @@ class _Login2PageState extends State<Login2Page> {
                                 height: 47,
                                 width: 47,
                                 decoration: BoxDecoration(
-                                  border:
-                                      Border.all(width: 1, color: Colors.black),
+                                  border: Border.all(
+                                      width: 0.7, color: Colors.black),
                                   borderRadius: BorderRadius.all(
                                     Radius.circular(8),
                                   ),
@@ -92,13 +92,21 @@ class _Login2PageState extends State<Login2Page> {
                                     decoration: InputDecoration(
                                       enabledBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
-                                          width: 1,
+                                          width: 0.7,
                                           color: Colors.black,
                                         ),
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                       ),
-                                      hintText: 'Enter Email',
+                                      hintText: 'vishalvirdi@039gmail.com',
+                                      hintStyle: Theme.of(context)
+                                          .textTheme
+                                          .caption
+                                          ?.copyWith(
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.black,
+                                          ),
                                     ),
                                     validator: (val) {
                                       return RegExp(
@@ -115,7 +123,7 @@ class _Login2PageState extends State<Login2Page> {
                         ),
                         Padding(
                           padding: const EdgeInsets.only(
-                              left: 15, top: 12, right: 15),
+                              left: 12, top: 12, right: 12),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -123,8 +131,8 @@ class _Login2PageState extends State<Login2Page> {
                                 height: 47,
                                 width: 47,
                                 decoration: BoxDecoration(
-                                  border:
-                                      Border.all(width: 1, color: Colors.black),
+                                  border: Border.all(
+                                      width: 0.7, color: Colors.black),
                                   borderRadius: BorderRadius.all(
                                     Radius.circular(8),
                                   ),
@@ -144,13 +152,21 @@ class _Login2PageState extends State<Login2Page> {
                                     decoration: InputDecoration(
                                       enabledBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
-                                          width: 1,
+                                          width: 0.7,
                                           color: Colors.black,
                                         ),
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                       ),
-                                      hintText: 'Enter Password',
+                                      hintText: '*************',
+                                      hintStyle: Theme.of(context)
+                                          .textTheme
+                                          .caption
+                                          ?.copyWith(
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.black,
+                                          ),
                                     ),
                                     validator: (value) {
                                       if (value!.isEmpty) {
@@ -168,7 +184,7 @@ class _Login2PageState extends State<Login2Page> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(top: 10, right: 12),
+                          padding: const EdgeInsets.only(top: 12, right: 12),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
@@ -258,6 +274,9 @@ class _Login2PageState extends State<Login2Page> {
                           // color: Colors.blue,
                           size: 24.0,
                         ),
+                      ),
+                      SizedBox(
+                        width: 7,
                       ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),

@@ -18,7 +18,7 @@ class _ProductPageState extends State<ProductPage> {
         backgroundColor: Colors.orange,
         title: Text(
           'Mobile & Computer Accessories',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.white, fontSize: 16),
         ),
         centerTitle: true,
         leading: Padding(

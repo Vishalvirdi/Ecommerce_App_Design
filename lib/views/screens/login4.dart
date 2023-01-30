@@ -87,6 +87,7 @@ class _LoginPage4State extends State<LoginPage4> {
                                     fillColor: Colors.orange,
                                     selectedColor: Colors.white,
                                     color: Colors.orange,
+                                    borderWidth: 0.7,
                                     selectedBorderColor: Colors.orange,
                                     borderColor: Colors.black,
                                     borderRadius: BorderRadius.circular(20),
@@ -144,8 +145,16 @@ class _LoginPage4State extends State<LoginPage4> {
                                   child: TextFormField(
                                     controller: _emailController,
                                     decoration: InputDecoration(
-                                      border: UnderlineInputBorder(),
-                                      hintStyle: TextStyle(fontSize: 14),
+                                      enabledBorder: UnderlineInputBorder(
+                                          borderSide:
+                                              BorderSide(color: Colors.black)),
+                                      hintStyle: Theme.of(context)
+                                          .textTheme
+                                          .caption
+                                          ?.copyWith(
+                                            fontSize: 12,
+                                            color: Colors.black,
+                                          ),
                                       hintText: 'Vishal Virdi',
                                     ),
                                     validator: (value) {
@@ -168,7 +177,16 @@ class _LoginPage4State extends State<LoginPage4> {
                                   child: TextFormField(
                                     controller: _passwordController,
                                     decoration: InputDecoration(
-                                      hintStyle: TextStyle(fontSize: 14),
+                                      enabledBorder: UnderlineInputBorder(
+                                          borderSide:
+                                              BorderSide(color: Colors.black)),
+                                      hintStyle: Theme.of(context)
+                                          .textTheme
+                                          .caption
+                                          ?.copyWith(
+                                            fontSize: 12,
+                                            color: Colors.black,
+                                          ),
                                       hintText: 'vishalvirdi039@gmail.com',
                                     ),
                                     validator: (val) {
@@ -190,8 +208,16 @@ class _LoginPage4State extends State<LoginPage4> {
                                   child: TextFormField(
                                     controller: _emailController,
                                     decoration: InputDecoration(
-                                      border: UnderlineInputBorder(),
-                                      hintStyle: TextStyle(fontSize: 14),
+                                      enabledBorder: UnderlineInputBorder(
+                                          borderSide:
+                                              BorderSide(color: Colors.black)),
+                                      hintStyle: Theme.of(context)
+                                          .textTheme
+                                          .caption
+                                          ?.copyWith(
+                                            fontSize: 12,
+                                            color: Colors.black,
+                                          ),
                                       hintText: '********',
                                     ),
                                     validator: (value) {
@@ -215,8 +241,16 @@ class _LoginPage4State extends State<LoginPage4> {
                                   child: TextFormField(
                                     controller: _emailController,
                                     decoration: InputDecoration(
-                                      border: UnderlineInputBorder(),
-                                      hintStyle: TextStyle(fontSize: 14),
+                                      enabledBorder: UnderlineInputBorder(
+                                          borderSide:
+                                              BorderSide(color: Colors.black)),
+                                      hintStyle: Theme.of(context)
+                                          .textTheme
+                                          .caption
+                                          ?.copyWith(
+                                            fontSize: 12,
+                                            color: Colors.black,
+                                          ),
                                       hintText: '********',
                                     ),
                                     validator: (value) {
@@ -241,8 +275,16 @@ class _LoginPage4State extends State<LoginPage4> {
                                     textAlign: TextAlign.center,
                                     controller: _emailController,
                                     decoration: InputDecoration(
-                                      border: UnderlineInputBorder(),
-                                      hintStyle: TextStyle(fontSize: 14),
+                                      enabledBorder: UnderlineInputBorder(
+                                          borderSide:
+                                              BorderSide(color: Colors.black)),
+                                      hintStyle: Theme.of(context)
+                                          .textTheme
+                                          .caption
+                                          ?.copyWith(
+                                            fontSize: 12,
+                                            color: Colors.black,
+                                          ),
                                       hintText: '322 46833 29',
                                     ),
                                     validator: (value) {

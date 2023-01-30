@@ -70,7 +70,13 @@ class _LoginPageState extends State<LoginPage> {
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8.0),
                           ),
-                          hintText: 'Enter Email',
+                          hintText: 'vishalvirdi039@gmail.com',
+                          hintStyle:
+                              Theme.of(context).textTheme.caption?.copyWith(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black,
+                                  ),
                         ),
                         validator: (val) {
                           return RegExp(
@@ -103,7 +109,13 @@ class _LoginPageState extends State<LoginPage> {
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(8.0),
                           ),
-                          hintText: 'Enter Password',
+                          hintText: '************',
+                          hintStyle:
+                              Theme.of(context).textTheme.caption?.copyWith(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black,
+                                  ),
                         ),
                         validator: (value) {
                           if (value!.isEmpty) {

@@ -231,9 +231,12 @@ class _ProductDetailsState extends State<ProductDetails> {
                 ),
               ),
             ),
-            Container(
-                height: MediaQuery.of(context).size.width * 0.383,
-                child: DiscountWidget()),
+            Padding(
+              padding: const EdgeInsets.only(left: 9),
+              child: Container(
+                  height: MediaQuery.of(context).size.width * 0.383,
+                  child: DiscountWidget()),
+            ),
             Padding(
               padding: const EdgeInsets.only(left: 15, right: 15),
               child: ElevatedButton(
